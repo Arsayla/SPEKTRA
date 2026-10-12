@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPEKTRA-AI</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="phone">
+      <!-- ================= GET STARTED ================= -->
+      <section id="welcome" class="screen welcome-screen">
+        <div class="cloud-area">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+          <div class="cloud cloud-3"></div>
+          <div class="cloud cloud-4"></div>
+          <div class="cloud cloud-5"></div>
+        </div>
+
+        <div class="welcome-content">
+          <h1>SPEKTRA-AI</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <button class="primary-btn" onclick="showLogin()">Get started</button>
+
+          <button class="secondary-btn" onclick="showLogin()">
+            Already have an account
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= LOGIN ================= -->
+      <section id="login" class="screen auth-screen hidden">
+        <div class="cloud-area auth-cloud">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+          <div class="cloud cloud-3"></div>
+          <div class="cloud cloud-4"></div>
+          <div class="cloud cloud-5"></div>
+        </div>
+
+        <div class="auth-content">
+          <div class="form-group">
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" placeholder="admin@gmail.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="********" />
+          </div>
+
+          <button class="primary-btn auth-btn" onclick="login()">Log In</button>
+
+          <div class="divider">
+            <span></span>
+            <p>Or continue with</p>
+            <span></span>
+          </div>
+
+          <div class="social-login">
+            <button onclick="socialLogin('Google')" class="social google">
+              G
+            </button>
+
+            <button onclick="socialLogin('Facebook')" class="social facebook">
+              f
+            </button>
+
+            <button onclick="socialLogin('Apple')" class="social apple">
+              
+            </button>
+          </div>
+
+          <div class="switch-auth">
+            <p>Don't have an account?</p>
+
+            <button onclick="showSignup()">Sign up &gt;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SIGN UP ================= -->
+      <section id="signup" class="screen auth-screen hidden">
+        <div class="cloud-area signup-cloud">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+          <div class="cloud cloud-3"></div>
+          <div class="cloud cloud-4"></div>
+          <div class="cloud cloud-5"></div>
+        </div>
+
+        <div class="auth-content signup-content">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="fufufafa" />
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">E-mail</label>
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="admin@gmail.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" placeholder="********" />
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="********"
+            />
+          </div>
+
+          <button class="primary-btn auth-btn" onclick="signup()">
+            Sign Up
+          </button>
+
+          <div class="divider">
+            <span></span>
+            <p>Or continue with</p>
+            <span></span>
+          </div>
+
+          <div class="social-login">
+            <button onclick="socialLogin('Google')" class="social google">
+              G
+            </button>
+
+            <button onclick="socialLogin('Facebook')" class="social facebook">
+              f
+            </button>
+
+            <button onclick="socialLogin('Apple')" class="social apple">
+              
+            </button>
+          </div>
+
+          <div class="switch-auth">
+            <p>Already have an account?</p>
+
+            <button class="primary-btn auth-btn" onclick="login()">
+              Log In
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

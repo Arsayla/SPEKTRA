@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SPEKTRA-AI Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <!-- ================= HEADER ================= -->
+
+      <header class="dashboard-header">
+        <div class="header-left">
+          <h1>SPEKTRA-AI</h1>
+
+          <p>Yuk belajar dan berkembang bersama!</p>
+        </div>
+
+        <div class="profile">
+          <div class="profile-icon">👧</div>
+
+          <div>
+            <strong> Hai, Fafa! </strong>
+
+            <span> ⭐ 120 poin </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= MAIN ================= -->
+
+      <main>
+        <section class="welcome">
+          <div>
+            <h2>Hai, Fafa! 👋</h2>
+
+            <p>Apa yang ingin kamu pelajari hari ini?</p>
+          </div>
+
+          <div class="mascot">⭐</div>
+        </section>
+
+        <!-- ================= MODULE ================= -->
+
+        <section class="modules">
+
+    <h2>Aku Bisa! 🌟</h2>
+
+    <p class="description">
+        Pilih aktivitas yang ingin kamu pelajari.
+    </p>
+
+    <div class="module-grid">
+
+        <!-- MAKAN -->
+        <div class="module-card makan">
+
+            <div class="module-illustration">
+                <img src="images/makan.png" alt="Aku Bisa Makan">
+            </div>
+
+            <div class="module-info">
+
+                <h3>Aku Bisa Makan</h3>
+
+                <p>
+                    Belajar mengenal alat makan,
+                    berdoa, dan mencuci tangan.
+                </p>
+
+                <div class="module-actions">
+
+                    <button
+                        onclick="openMakan()"
+                        class="learn-btn">
+                        Mulai Belajar
+                    </button>
+
+                    <button
+                        onclick="scanQR('makan')"
+                        class="qr-btn">
+                        📷
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANDI -->
+        <div class="module-card mandi">
+
+            <div class="module-illustration">
+                <img src="images/mandi.png" alt="Aku Bisa Mandi">
+            </div>
+
+            <div class="module-info">
+
+                <h3>Aku Bisa Mandi</h3>
+
+                <p>
+                    Belajar mengenal alat mandi
+                    dan langkah mandi.
+                </p>
+
+                <div class="module-actions">
+
+                    <button
+                        onclick="openMandi()"
+                        class="learn-btn">
+                        Mulai Belajar
+                    </button>
+
+                    <button
+                        onclick="scanQR('mandi')"
+                        class="qr-btn">
+                        📷
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TIDUR -->
+        <div class="module-card tidur">
+
+            <div class="module-illustration">
+                <img src="images/tidur.png" alt="Aku Bisa Tidur">
+            </div>
+
+            <div class="module-info">
+
+                <h3>Aku Bisa Tidur</h3>
+
+                <p>
+                    Belajar mempersiapkan diri
+                    sebelum tidur.
+                </p>
+
+                <div class="module-actions">
+
+                    <button
+                        onclick="openTidur()"
+                        class="learn-btn">
+                        Mulai Belajar
+                    </button>
+
+                    <button
+                        onclick="scanQR('tidur')"
+                        class="qr-btn">
+                        📷
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- KOSONG -->
+        <div class="module-card empty-card">
+
+            <span>+</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+ <!-- ==================================================
+                    MODUL MAKAN
+=================================================== -->
+
+<div
+    id="makanPage"
+    class="page-overlay hidden"
+>
+
+
+    <div class="learning-container">
+
+
+        <!-- HEADER -->
+
+        <div class="learning-header">
+
+            <button
+                onclick="closePage()"
+                class="back-btn"
+            >
+                ←
+            </button>
+
+
+            <div>
+
+                <h2>
+                    Aku Bisa Makan 🍽️
+                </h2>
+
+                <p>
+                    Yuk belajar sebelum makan!
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="scanQR('makan')"
+                class="header-qr"
+            >
+                📷
+            </button>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="learning-content">
+
+
+            <div class="lesson-list">
+
+
+                <!-- LESSON 1 -->
+
+                <div
+                    class="lesson active"
+                    onclick="showLesson(1)"
+                >
+
+                    <div class="lesson-icon">
+                        🥄
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Pengenalan Alat Makan
+                        </h3>
+
+                        <p>
+                            Kenali alat-alat makan.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        ▶
+                    </span>
+
+                </div>
+
+
+
+                <!-- LESSON 2 -->
+
+                <div
+                    id="lessonCard2"
+                    class="lesson locked"
+                    onclick="showLesson(2)"
+                >
+
+                    <div class="lesson-icon">
+                        🤲
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Doa Sebelum Makan
+                        </h3>
+
+                        <p>
+                            Belajar berdoa sebelum makan.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        🔒
+                    </span>
+
+                </div>
+
+
+
+                <!-- LESSON 3 -->
+
+                <div
+                    id="lessonCard3"
+                    class="lesson locked"
+                    onclick="showLesson(3)"
+                >
+
+                    <div class="lesson-icon">
+                        🧼
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Cuci Tangan
+                        </h3>
+
+                        <p>
+                            Belajar mencuci tangan.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        🔒
+                    </span>
+
+                </div>
+
+
+
+                <!-- LATIHAN -->
+
+                <div
+                    id="lessonCard4"
+                    class="lesson exercise locked"
+                    onclick="showLesson(4)"
+                >
+
+                    <div class="lesson-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Latihan
+                        </h3>
+
+                        <p>
+                            Yuk coba apa yang sudah dipelajari!
+                        </p>
+
+                    </div>
+
+                    <span>
+                        🔒
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= MATERI ================= -->
+
+            <div class="lesson-content">
+
+
+                <!-- ALAT MAKAN -->
+
+                <div
+                    id="lesson1"
+                    class="material active-material"
+                >
+
+                    <div class="material-icon">
+                        🥄
+                    </div>
+
+
+                    <h2>
+                        Pengenalan Alat Makan
+                    </h2>
+
+
+                    <p>
+                        Yuk kenali alat-alat yang
+                        biasa digunakan saat makan!
+                    </p>
+
+
+                    <div class="food-tools">
+
+
+                        <div>
+                            <span>🥄</span>
+
+                            <strong>
+                                Sendok
+                            </strong>
+
+                            <small>
+                                Untuk mengambil makanan.
+                            </small>
+                        </div>
+
+
+                        <div>
+                            <span>🍴</span>
+
+                            <strong>
+                                Garpu
+                            </strong>
+
+                            <small>
+                                Untuk mengambil makanan.
+                            </small>
+                        </div>
+
+
+                        <div>
+                            <span>🥣</span>
+
+                            <strong>
+                                Mangkuk
+                            </strong>
+
+                            <small>
+                                Tempat makanan.
+                            </small>
+                        </div>
+
+
+                        <div>
+                            <span>🥛</span>
+
+                            <strong>
+                                Gelas
+                            </strong>
+
+                            <small>
+                                Tempat minum.
+                            </small>
+                        </div>
+
+
+                    </div>
+
+
+                    <button
+                        onclick="completeLesson(1)"
+                        class="next-btn"
+                    >
+                        Sudah Mengerti →
+                    </button>
+
+                </div>
+
+
+
+                <!-- DOA -->
+
+                <div
+                    id="lesson2"
+                    class="material"
+                >
+
+                    <div class="material-icon">
+                        🤲
+                    </div>
+
+
+                    <h2>
+                        Doa Sebelum Makan
+                    </h2>
+
+
+                    <p>
+                        Sebelum makan, jangan lupa
+                        berdoa terlebih dahulu.
+                    </p>
+
+
+                    <div class="doa">
+
+                        <div>
+                            بِسْمِ اللَّهِ
+                        </div>
+
+                        <small>
+                            "Dengan menyebut nama Allah."
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        onclick="completeLesson(2)"
+                        class="next-btn"
+                    >
+                        Sudah Mengerti →
+                    </button>
+
+                </div>
+
+
+
+                <!-- CUCI TANGAN -->
+
+                <div
+                    id="lesson3"
+                    class="material"
+                >
+
+                    <div class="material-icon">
+                        🧼
+                    </div>
+
+
+                    <h2>
+                        Cuci Tangan
+                    </h2>
+
+
+                    <p>
+                        Cuci tangan sebelum makan
+                        agar tangan kita bersih.
+                    </p>
+
+
+                    <div class="hand-steps">
+
+                        <div>
+                            <b>1</b>
+                            Basahi tangan
+                        </div>
+
+                        <div>
+                            <b>2</b>
+                            Gunakan sabun
+                        </div>
+
+                        <div>
+                            <b>3</b>
+                            Gosok tangan
+                        </div>
+
+                        <div>
+                            <b>4</b>
+                            Bilas dan keringkan
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        onclick="completeLesson(3)"
+                        class="next-btn"
+                    >
+                        Sudah Mengerti →
+                    </button>
+
+                </div>
+
+
+
+                <!-- LATIHAN -->
+
+                <div
+                    id="lesson4"
+                    class="material"
+                >
+
+                    <div class="material-icon">
+                        ⭐
+                    </div>
+
+
+                    <h2>
+                        Yuk Berlatih!
+                    </h2>
+
+
+                    <p>
+                        Mana yang digunakan untuk makan?
+                    </p>
+
+
+                    <div class="quiz">
+
+
+                        <button
+                            onclick="answer(false)"
+                        >
+                            🧸
+                            <small>
+                                Boneka
+                            </small>
+                        </button>
+
+
+                        <button
+                            onclick="answer(true)"
+                        >
+                            🥄
+                            <small>
+                                Sendok
+                            </small>
+                        </button>
+
+
+                        <button
+                            onclick="answer(false)"
+                        >
+                            🚗
+                            <small>
+                                Mobil
+                            </small>
+                        </button>
+
+
+                        <button
+                            onclick="answer(false)"
+                        >
+                            ⚽
+                            <small>
+                                Bola
+                            </small>
+                        </button>
+
+
+                    </div>
+
+
+                    <p
+                        id="answerMessage"
+                        class="answer-message"
+                    ></p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= QR MODAL ================= -->
+
+<div
+    id="qrModal"
+    class="qr-modal hidden"
+>
+
+    <div class="qr-box">
+
+        <button
+            onclick="closeQR()"
+            class="close-qr"
+        >
+            ×
+        </button>
+
+
+        <div class="qr-icon">
+            📷
+        </div>
+
+
+        <h2>
+            Scan QR Code
+        </h2>
+
+
+        <p id="qrModule">
+            Arahkan kamera ke QR Code.
+        </p>
+
+
+        <div class="camera">
+
+            <div class="scan-line"></div>
+
+            <span>
+                QR
+            </span>
+
+        </div>
+
+
+        <button
+            onclick="startScanner()"
+            class="scan-btn"
+        >
+            Mulai Scan
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
